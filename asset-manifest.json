@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Tasks-Reminder-with-Alarm/static/css/main.8c4894db.chunk.css",
+    "main.js": "/Tasks-Reminder-with-Alarm/static/js/main.87576977.chunk.js",
+    "main.js.map": "/Tasks-Reminder-with-Alarm/static/js/main.87576977.chunk.js.map",
+    "runtime-main.js": "/Tasks-Reminder-with-Alarm/static/js/runtime-main.4e797470.js",
+    "runtime-main.js.map": "/Tasks-Reminder-with-Alarm/static/js/runtime-main.4e797470.js.map",
+    "static/js/2.b56d6a14.chunk.js": "/Tasks-Reminder-with-Alarm/static/js/2.b56d6a14.chunk.js",
+    "static/js/2.b56d6a14.chunk.js.map": "/Tasks-Reminder-with-Alarm/static/js/2.b56d6a14.chunk.js.map",
+    "index.html": "/Tasks-Reminder-with-Alarm/index.html",
+    "static/css/main.8c4894db.chunk.css.map": "/Tasks-Reminder-with-Alarm/static/css/main.8c4894db.chunk.css.map",
+    "static/js/2.b56d6a14.chunk.js.LICENSE.txt": "/Tasks-Reminder-with-Alarm/static/js/2.b56d6a14.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Tasks-Reminder-with-Alarm/static/media/ToDoBgImg.5878e665.jpg",
+    "static/media/alarmring.fdab3bcb.mp3": "/Tasks-Reminder-with-Alarm/static/media/alarmring.fdab3bcb.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4e797470.js",
+    "static/js/2.b56d6a14.chunk.js",
+    "static/css/main.8c4894db.chunk.css",
+    "static/js/main.87576977.chunk.js"
+  ]
+}
