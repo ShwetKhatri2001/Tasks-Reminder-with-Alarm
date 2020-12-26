@@ -5,6 +5,7 @@ import AddTasks from "./AddTasks";
 import SearchTasks from "./SearchTasks";
 
 
+
 const ToDoList = () => {
 
   const [item, setItem] = useState("");
@@ -14,23 +15,22 @@ const ToDoList = () => {
   const [searchitem,setSearchItem] = useState("");
   const [searchdate,setSearchDate] = useState("");
   const [searcharr,setSearcharr] = useState([]);
-  const [radioval, setRadioval] = React.useState('All');
+  const [radioval, setRadioval] = useState('All');
   const [currentdatetime,setTime] = useState("");
-
+  
   
   useEffect(() => {
     
-    var timerID = setInterval( () => tick(), 1000 );
+    var timerID = setInterval( () => tick(), 1000);
     return function cleanup() {
         clearInterval(timerID);
       };
    });
-  
-     function tick() {
-      setTime(new Date().toLocaleString('en-GB'));
-     }
+
+   function tick() {
+    setTime(new Date().toLocaleString('en-GB'));
+  }
  
-   
 
   const itemEvent = (event) => {
     setItem(event.target.value);
@@ -62,10 +62,8 @@ const selectoneradio = (event) =>{
          
 
   const RemoveItem = (rid) =>{
-    console.log(rid);
     
     
-     
     setObjects((prevValue) => {
       return prevValue.filter((obj) => {
             return obj.id !== rid;
@@ -73,6 +71,7 @@ const selectoneradio = (event) =>{
     });
      
   }
+
   
   const AddItems = () => {
 
@@ -84,7 +83,7 @@ const selectoneradio = (event) =>{
         
 
         setObjects((prevValue) => {
-          return [...prevValue, {itemVal:item,dateVal:date,completed:false,futuretask:true,id:Math.floor(Math.random()*10000)}];
+          return [...prevValue, {itemVal:item,dateVal:date,completed:false,futuretask:true,id:Math.floor(Math.random()*10000),edited:false}];
         })
 
         
@@ -95,7 +94,7 @@ const selectoneradio = (event) =>{
     
     
       setDate("");
-
+     
 
   }
 
@@ -117,7 +116,7 @@ const selectoneradio = (event) =>{
                 && obj.dateVal.toLowerCase().includes(searchdate.toLowerCase())}));
                break;
        }
-      
+       
      }
   ,[radioval,arrayofobj,searchitem,searchdate]);
   
@@ -137,7 +136,7 @@ const selectoneradio = (event) =>{
 
 
           <ol>
-                 
+          
             { 
               
               searcharr.map((val, index) => {
@@ -149,6 +148,7 @@ const selectoneradio = (event) =>{
               clicktime={clicktime}
               completed={val.completed}
               futuretask={val.futuretask}
+              edited={val.edited}
               arrayofobj = {arrayofobj}
               setObjects={setObjects}
               currentdatetime={currentdatetime}
@@ -157,7 +157,7 @@ const selectoneradio = (event) =>{
               
             
             } 
-             
+           
 
 
           </ol>
