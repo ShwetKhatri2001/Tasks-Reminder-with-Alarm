@@ -1,0 +1,241 @@
+.categorytitle {
+  margin-top: 5%;
+  color: #db202c;
+}
+
+.genres_list {
+  background-color: #0e0f11;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.genrelink {
+  margin: 3rem;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  transition: transform 500ms;
+}
+
+.categorymvinfo {
+  text-decoration: none;
+}
+
+.genrelink:hover {
+  transform: scale(1.1);
+}
+
+.genre_img {
+  width: 250px;
+  height: 350px;
+}
+
+.genre_info {
+  max-width: 250px;
+  margin: 0 25px;
+  color: #db202c;
+  border: 2px solid #db202c;
+}
+
+.large_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+}
+.genremovie_title {
+  width: 80%;
+}
+
+.rating {
+  color: gold;
+}
+.star {
+  color: gold;
+  margin-right: 3px;
+}
+
+.genrelink:hover .genre_info {
+  background-color: #db202c;
+  color: black;
+}
+
+.watchlistbtn {
+  margin: 10px;
+  width: 250px;
+  font-size: 1.2em;
+  margin: 0 25px;
+  padding: 6px;
+  text-align: center;
+  color: gold;
+  border: 2px solid gold;
+  cursor: pointer;
+}
+
+.watchlistbtn .fa-plus,
+.watchlistbtn .fa-minus {
+  margin-right: 10px;
+}
+
+.watchlistbtn:hover {
+  background-color: gold;
+  color: #db202c;
+}
+
+.emptylist1 {
+  text-align: center;
+  vertical-align: center;
+  padding-top: 40vh;
+  margin-bottom: 10px;
+  color: #db202c;
+}
+.emptylist2 {
+  text-align: center;
+  vertical-align: center;
+  margin: 0px auto;
+  padding-bottom: 44vh;
+  color: #db202c;
+}
+.errorstyles {
+  text-align: center;
+  color: #db202c;
+}
+
+.fourzerofour {
+  font-size: 15vw;
+  text-align: center;
+  margin: 5vh auto;
+  margin-bottom: 0px;
+}
+.ErrorPage {
+  font-size: 4vw;
+  margin-bottom: 20px;
+}
+
+.ErrorMsg {
+  font-size: 2vw;
+  margin-bottom: 30px;
+}
+
+.goto_link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2vw;
+  margin: 0px 41vw;
+  padding: 10px;
+  background-color: #db202c;
+  border-radius: 10px;
+}
+.goto_link:hover {
+  transition: all 0.5s ease;
+  border: 2px solid#fff;
+  background-color: transparent;
+  color: #db202c;
+}
+
+.searchheader {
+  background-color: rgb(5, 5, 5);
+  margin-top: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchbox {
+  width: 200px;
+  border: 2px solid #fff;
+  display: inline;
+  border-radius: 10px;
+  font-size: 1.3em;
+  font-family: inherit;
+  color: #db202c;
+  background-color: #0e0f11;
+  padding: 4px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.searchbox:focus {
+  width: 400px;
+  outline: none;
+}
+
+.fa-search {
+  color: #fff;
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+@media (max-width: 900px) and (min-width: 500px) {
+  .genres_list {
+    margin-top: 8%;
+  }
+  .searchbox {
+    width: 180px;
+  }
+  .searchbox:focus {
+    width: 300px;
+  }
+
+  .emptylist2 {
+    padding-bottom: 45vh;
+  }
+  .fourzerofour {
+    font-size: 18vw;
+  }
+  .ErrorPage {
+    font-size: 6vw;
+  }
+
+  .ErrorMsg {
+    font-size: 3vw;
+  }
+
+  .goto_link {
+    font-size: 3vw;
+    margin: 0px 38vw;
+  }
+}
+
+@media (max-width: 499px) {
+  .genres_list {
+    margin-top: 14%;
+  }
+
+  .genrelink {
+    margin-bottom: 0rem;
+  }
+  .genrelink:hover {
+    transform: scale(1);
+  }
+  .searchbox {
+    width: 150px;
+  }
+  .searchbox:focus {
+    width: 220px;
+  }
+
+  .emptylist2 {
+    padding-bottom: 35vh;
+  }
+
+  .fourzerofour {
+    font-size: 20vw;
+  }
+  .ErrorPage {
+    font-size: 8vw;
+  }
+
+  .ErrorMsg {
+    font-size: 5vw;
+  }
+
+  .goto_link {
+    font-size: 5vw;
+    margin: 0px 30vw;
+  }
+}

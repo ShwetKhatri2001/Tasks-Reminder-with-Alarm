@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './Components/ToDo';
-import  "./index.css";
-
+import App from './App';
+import "./index.css"
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-    
-    <App/>
-    ,
-    document.getElementById('root')
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root')
 );
+
+;
