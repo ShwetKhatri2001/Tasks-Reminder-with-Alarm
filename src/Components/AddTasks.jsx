@@ -5,7 +5,6 @@ import AddIcon from "@material-ui/icons/Add";
 const AddTasks = (props) =>{
     return(
     <>
-       
       <h3>Give me your Tasks ! I'll Remember Them</h3>
       <br />
 

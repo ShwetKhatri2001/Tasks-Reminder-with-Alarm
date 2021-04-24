@@ -36,19 +36,18 @@ const SearchTasks = (props) =>{
      <div className="radiodiv big_visible">
      <RadioGroup aria-label="tasktypes" className="radiobtns big_visible" name="tasktypes" 
                value={props.radioval} onChange={props.selectoneradio}>
-        <Grid container>
-          <Grid item>
-        
-        <FormControlLabel className="radiooption" value="All" control={<Radio className="radio " color="secondary" />} label="All"  />       
-        </Grid>
-        <Grid item>
-        <FormControlLabel className="radiooption" value="Completed" control={<Radio className="radio " color="secondary"/>} 
-        label="Completed" />
-        </Grid>
-        <Grid item>
-        <FormControlLabel className="radiooption" value="UnCompleted" control={<Radio className="radio " color="secondary"/>} label="UnCompleted" /> 
-        </Grid>
-         </Grid> 
+      <Grid container>
+         <Grid item>
+              <FormControlLabel className="radiooption" value="All" control={<Radio className="radio " color="secondary" />} label="All"  />       
+         </Grid>
+         <Grid item>
+           <FormControlLabel className="radiooption" value="Completed" control={<Radio className="radio " color="secondary"/>} 
+           label="Completed" />
+         </Grid>
+         <Grid item>
+            <FormControlLabel className="radiooption" value="UnCompleted" control={<Radio className="radio " color="secondary"/>} label="UnCompleted" /> 
+         </Grid>
+      </Grid> 
       </RadioGroup>
       </div>
       <div className="small_visible">
@@ -57,8 +56,7 @@ const SearchTasks = (props) =>{
       <RadioGroup aria-label="tasktypes" name="tasktypes" className="radiobtns" value={props.radioval} onChange={props.selectoneradio}>
         <FormControlLabel value="All" className="radiooption ml" control={<Radio className="radio"/>} label="All" />
         <FormControlLabel value="Completed" className="radiooption ml" control={<Radio className="radio"/>} label="Completed" />
-        <FormControlLabel value="UnCompleted" className="radiooption " control={<Radio className="radio"/>} label="UnCompleted" />
-        
+        <FormControlLabel value="UnCompleted" className="radiooption " control={<Radio className="radio"/>} label="UnCompleted" /> 
       </RadioGroup>
     </FormControl>
     </div>

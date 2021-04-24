@@ -31,9 +31,7 @@ const ListCom = (props) => {
       }
       return obj;
     })
-    )      
-
-   }
+    )}
 
    const taskeditstarted = (event) => {
     props.setObjects(props.arrayofobj.map((obj)=>{
@@ -46,9 +44,7 @@ const ListCom = (props) => {
       }
       return obj;
     })
-    )  
-      
-   }
+    )}
     
    const taskeditended = (event) => {
     props.setObjects(props.arrayofobj.map((obj)=>{
@@ -56,8 +52,7 @@ const ListCom = (props) => {
       {
         return {
           itemVal:editeditem,dateVal:editeddate,futuretask:true,edited:false,completed: false,id:obj.id
-        }
-       
+        } 
       }
       return obj;
     })
@@ -65,15 +60,12 @@ const ListCom = (props) => {
     localStorage.setItem("localtodos",JSON.stringify(props.arrayofobj)); 
    }
 
-   
-
   let count = 0 ,alarmcnt;
   const givendatetime = new Date(props.dateval.replace('T', ' ')).toLocaleString('en-GB');
   
   
   if(props.currentdatetime === givendatetime && !props.completed)
    {
-    
     const playalarm =() =>{
       count++;
       
@@ -88,7 +80,6 @@ const ListCom = (props) => {
           return {
             ...obj,futuretask: false
           }
-         
         }
         return obj;
        })
@@ -104,16 +95,13 @@ const ListCom = (props) => {
               return {
                 ...obj,futuretask: true
               }
-             
             }
             return obj;
           })
           ) 
         }
      }
-     
-     alarmcnt = setInterval( playalarm ,11000);
-             
+     alarmcnt = setInterval( playalarm ,11000);        
    }
   
 
@@ -157,7 +145,6 @@ const ListCom = (props) => {
         <div  className={props.completed ? "timediv itdiv completetask" :
                       (props.futuretask ? "timediv itdiv" :"timediv itdiv timeup")}>
           {new Date(props.dateval.replace('T', ' ')).toLocaleString('en-GB')}
-        
         </div>
         </li>
           
@@ -206,23 +193,19 @@ const ListCom = (props) => {
          <span onClick={() => {props.onremove(props.id)}}>    
                <ClearIcon  className="deleteIcon" />  
         </span>
-
       </div>
       <div className="small_div">
-     
          <div className={props.completed ? "small_checkitem itdiv completetask" : 
                              ( props.futuretask ? "small_checkitem itdiv" :"small_checkitem itdiv timeup")}>
           {props.itemval}
         
          </div>
-         
-          
+ 
           <div  className={props.completed ? "small_crosstime itdiv completetask" :
                      (props.futuretask ? "small_crosstime itdiv" :"small_crosstime itdiv timeup")}>
           {new Date(props.dateval.replace('T', ' ')).toLocaleString('en-GB')}
       
-           </div>
-                 
+           </div>        
       </div>
       
       <hr/>

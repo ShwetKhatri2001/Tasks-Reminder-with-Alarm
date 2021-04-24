@@ -70,8 +70,7 @@ const ToDoList = () => {
         {
           setObjects((prevValue) => {
             return [...prevValue, {itemVal:item,dateVal:date,completed:false,futuretask:true,id:Math.floor(Math.random()*10000),edited:false}];
-          })
-          
+          }) 
         }
         setItem("");
         setDate("");
