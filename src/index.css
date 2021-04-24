@@ -75,7 +75,7 @@ h3 {
 
 .datetime {
   background-color: black;
-  color: white;
+  color: gray;
   text-align: center;
   font-size: 20px;
   height: 30px;
@@ -84,6 +84,10 @@ h3 {
   background: transparent;
   border-bottom: 3px solid #347abb;
   outline: none;
+}
+
+.datetime::selection{
+  color:white;
 }
 
 ::-webkit-calendar-picker-indicator {
@@ -252,7 +256,22 @@ ol li {
   flex-direction: row;
   justify-content: left;
   align-items: center;
+  animation-name: zoomIn;
+  animation-duration:1.5s;
 }
+
+
+@keyframes zoomIn {
+  0%{
+    opacity: 0;
+    transform:scale3d(0.3, 0.3, 0.3);
+  }
+  50%{
+    opacity: 1;
+  }
+}
+
+
 
 .todo_style .deleteIcon {
   width: 35px;
@@ -338,6 +357,7 @@ ol li {
   margin-right: 5%;
   margin-top: 2px;
   margin-bottom: 2px;
+  color:white;
 }
 .todo_style .threebtns {
   display: inline-block;
@@ -363,6 +383,7 @@ ol li {
 .small_list .thumbsup {
   margin-left: 10px;
 }
+  
 
 /***** Responsive Styles ******/
 

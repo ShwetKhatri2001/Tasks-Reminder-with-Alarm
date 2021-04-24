@@ -32,7 +32,6 @@ const ListCom = (props) => {
       return obj;
     })
     )      
-    
 
    }
 
@@ -63,29 +62,24 @@ const ListCom = (props) => {
       return obj;
     })
     )  
-      
+    localStorage.setItem("localtodos",JSON.stringify(props.arrayofobj)); 
    }
 
    
-   
-  
 
   let count = 0 ,alarmcnt;
   const givendatetime = new Date(props.dateval.replace('T', ' ')).toLocaleString('en-GB');
   
   
-  if(props.currentdatetime === givendatetime)
+  if(props.currentdatetime === givendatetime && !props.completed)
    {
-    
     
     const playalarm =() =>{
       count++;
       
       if(count === 2)
          {
-           
            clearInterval(alarmcnt);
-           
          }
       
       props.setObjects(props.arrayofobj.map((obj)=>{
@@ -97,8 +91,8 @@ const ListCom = (props) => {
          
         }
         return obj;
-      })
-      ) 
+       })
+       ) 
         let alarmsound = new Audio(alarm);
         alarmsound.play();
          
@@ -118,67 +112,61 @@ const ListCom = (props) => {
         }
      }
      
-
-     
-        alarmcnt = setInterval(  playalarm ,11000);
-         
-        
+     alarmcnt = setInterval( playalarm ,11000);
+             
    }
   
 
   return (
-    
-    <div className="todo_style" >
+    <div className="todo_style"  >
       
       { props.edited ? (
         <>
-        <input
-        className="additem edititem bigbtn"
-        type="text"
-        value={editeditem}
-        placeholder="Edit Task"
-        onChange={itemEditEvent}
-        id="edititem"
-         autoComplete="off"
-        />
+          <input
+          className="additem edititem bigbtn"
+          type="text"
+          value={editeditem}
+          placeholder="Edit Task"
+          onChange={itemEditEvent}
+          id="edititem"
+          autoComplete="off"
+          />
+          
+          <input className="datetime editdt bigbtn" type="datetime-local" id="editdatetime" name="taskdatetime" onChange={dateEditEvent}
+          value={editeddate}  autoComplete="off"/>
         
-        <input className="datetime editdt bigbtn" type="datetime-local" id="editdatetime" name="taskdatetime" onChange={dateEditEvent}
-        value={editeddate}  autoComplete="off"/>
-       
-        <span className="bigbtn">
-        <ThumbUpIcon onClick={taskeditended} className=" editIcon "/>
-        </span>
+          <span className="bigbtn">
+          <ThumbUpIcon onClick={taskeditended} className=" editIcon "/>
+          </span>
         
         </> 
       )
       :
       (<>
-      <span onClick={taskcompleted} className="bigbtn">
-      <DoneOutlineIcon className={ props.completed ? "doneIcon CompletedIcon" : "doneIcon"}/>
-      </span>
-      
-      <li className="bigbtn">
-      <div className={props.completed ? "itemdiv itdiv completetask" : 
-                             ( props.futuretask ? "itemdiv itdiv" :"itemdiv itdiv timeup")}>
-        {props.itemval}
+        <span onClick={taskcompleted} className="bigbtn">
+        <DoneOutlineIcon className={ props.completed ? "doneIcon CompletedIcon" : "doneIcon"}/>
+        </span>
         
-      </div>
+        <li className="bigbtn">
+        <div className={props.completed ? "itemdiv itdiv completetask" : 
+                              ( props.futuretask ? "itemdiv itdiv" :"itemdiv itdiv timeup")}>
+          {props.itemval}
+          
+        </div>
 
-      
-      <div  className={props.completed ? "timediv itdiv completetask" :
-                     (props.futuretask ? "timediv itdiv" :"timediv itdiv timeup")}>
-        {new Date(props.dateval.replace('T', ' ')).toLocaleString('en-GB')}
-      
-      </div>
-      
-      </li>
-         
-      <span onClick={taskeditstarted} className="bigbtn">
-          <EditIcon className="editIcon"/>    
-      </span>
-      <span onClick={() => {props.onremove(props.id)}} className="bigbtn">    
-        <ClearIcon  className="deleteIcon" />  
-      </span>
+        <div  className={props.completed ? "timediv itdiv completetask" :
+                      (props.futuretask ? "timediv itdiv" :"timediv itdiv timeup")}>
+          {new Date(props.dateval.replace('T', ' ')).toLocaleString('en-GB')}
+        
+        </div>
+        </li>
+          
+        <span onClick={taskeditstarted} className="bigbtn">
+            <EditIcon className="editIcon"/>    
+        </span>
+        <span onClick={() => {props.onremove(props.id)}} className="bigbtn">    
+          <ClearIcon  className="deleteIcon" />  
+        </span>
       </>)
      }
 

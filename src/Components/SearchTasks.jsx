@@ -13,26 +13,25 @@ const SearchTasks = (props) =>{
     return(
      <>
      <div className="searchdiv ">
-             
-             <span class="searchitimediv">
-              <SearchIcon className="searchIcon" />
+        <span class="searchitimediv">
+            <SearchIcon className="searchIcon" />
               
-            <input
-            className="searchitem"
-            type="text"
-            value={props.searchitem}
-            placeholder="Search Task..."
-            onChange={props.SearchIEvent}
-            id="searchitem"
-            autoComplete="off"
-          />
-          </span>
-          <span class="searchitimediv">
+        <input
+          className="searchitem"
+          type="text"
+          value={props.searchitem}
+          placeholder="Search Task..."
+          onChange={props.SearchIEvent}
+          id="searchitem"
+          autoComplete="off"
+        />
+        </span>
+        <span class="searchitimediv">
            <SearchIcon className="searchIcon" />
-              <input className="searchdatetime" type="date" 
-              id="searchdatetime" name="taskdatetime" onChange={props.SearchDEvent}
-               value={props.searchdate}  autoComplete="off"/>
-          </span>
+            <input className="searchdatetime" type="date" 
+            id="searchdatetime" name="taskdatetime" onChange={props.SearchDEvent}
+            value={props.searchdate}  autoComplete="off"/>
+        </span>
      </div>
      <div className="radiodiv big_visible">
      <RadioGroup aria-label="tasktypes" className="radiobtns big_visible" name="tasktypes" 
